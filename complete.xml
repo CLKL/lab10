@@ -1,0 +1,80 @@
+<schedule>
+<courses>
+    <course course_num="4650">
+    <booking>
+		<day num="1">Monday</day>
+		<period time="1030"></period>
+		<room>SE12 306</room>
+		<instructor>Medhat Elmasry</instructor>
+	</booking>
+	<booking>
+		<day num="1">Monday</day>
+		<period time="1130"></period>
+		<room>SE12 306</room>
+		<instructor>Medhat Elmasry</instructor>
+	</booking>
+	<booking>
+		<day num="1">Monday</day>
+		<period time="1630"></period>
+		<room>SE6 205</room>
+		<instructor>Medhat Elmasry</instructor>
+	</booking>
+    </course>
+</courses>
+<periods>
+    <period time="1130">
+		<booking>
+        <course course_nunm="4650"></course>
+        <day num="1"></day>
+        <room>SE12-306</room>
+        <instructor>Dargahi, Farnaz</instructor>
+        </booking>
+		<booking>
+	<course course_num="4910"></course>
+        <day num="4"></day>
+        <room>SE12-306</room>
+        <instructor>Richard Chau</instructor>
+        </booking>
+		<booking>
+        <course course_num="4770"></course>       
+        <day num="5"></day>
+        <room>SE12-306</room>
+        <instructor>Trevor Lord</instructor>
+        </booking>
+    </period>
+</periods>
+<days>
+    <day num="4">
+        <booking>
+		<period time="930"></period>
+        <course course_num="4910"></course>
+        <room>SW5-1850</room>	
+        <instructor>Richard Chau</instructor>
+		</booking>
+		<booking>
+        <period time="1030"></period>
+        <course course_num="4910"></course>
+        <room>SE12-306</room>
+        <instructor>Richard Chau</instructor>
+		</booking>
+		<booking>
+        <period time="1130"></period>
+        <course course_num="4910"></course>
+        <room>SE12-306</room>
+        <instructor>Richard Chau</instructor>
+		</booking>
+		<booking>
+        <period time="1330"></period>
+        <course course_num="4850"></course>
+        <room>SE12-308</room>
+        <instructor>James Parry</instructor>
+        </booking>
+		<booking>
+        <period time="1430"></period>
+        <course course_num="4850"></course>
+        <room>SE12-308</room>
+        <instructor>James Parry</instructor>
+		</booking>
+    </day>
+</days>
+</schedule>
