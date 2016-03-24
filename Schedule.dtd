@@ -1,0 +1,26 @@
+<!ELEMENT schedule (days| periods|courses)+>
+
+<!ELEMENT booking (((day, period)|(period, course)|(day, course)), room, instructor)>
+
+<!-- Course Perspective -->
+<!ELEMENT courses (course)+>
+<!ELEMENT course (booking|EMPTY)*>
+<!ATTLIST course course_num (4650|4910|4660|4770|4850|4620) #REQUIRED>
+
+<!-- Period Perspective -->
+<!ELEMENT periods (period)+>
+<!ELEMENT period (booking|EMPTY)*>
+<!ATTLIST period
+	time (830|930|1030|1130|1230|1330|1430|1530|1630)
+	#REQUIRED >
+
+<!-- Day Perspective -->
+<!ELEMENT days(day)+>
+<!ELEMENT day (booking|EMPTY)*>
+<!ATTLIST day num (1|2|3|4|5) #REQUIRED>
+
+<!-- ELEMENTS -->
+		
+<!ELEMENT room (#PCDATA)>
+
+<!ELEMENT instructor (#PCDATA)>

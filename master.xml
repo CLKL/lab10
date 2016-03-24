@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!DOCTYPE timetable SYSTEM 'timetable.dtd' [
+	<!ENTITY part1 SYSTEM 'courses.xml'>
+	<!ENTITY part2 SYSTEM 'dayOfWeek.xml'>
+	<!ENTITY part3 SYSTEM 'period.xml'>
+]>
+
+
+<timetable>
+	&part1;
+	&part2;
+	&part3;
+</timetable>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Schedule Control File for the timetables
+-->
+
+
+<schedule>
+	<days>
+		<day code="mon">Monday</day>
+		<day code="tue">Tuesday</day>
+		<day code="wed">Wednesday</day>
+		<day code="thur">Thursday</day>
+		<day code="fri">Friday</day>
+	</days>
+	
+	<periods>
+		<period code="08:30">08:30</period>
+		<period code="09:30">09:30</period>
+		<period code="10:30">10:30</period>
+		<period code="11:30">11:30</period>
+		<period code="12:30">12:30</period>
+		<period code="13:30">13:30</period>
+		<period code="14:30">14:30</period>
+		<period code="15:30">15:30</period>
+		<period code="16:30">16:30</period>
+	</periods>
+	
+	<courses>
+		<course code="4650">4650</course>
+		<course code="4910">4910</course>
+		<course code="4620">4620</course>
+		<course code="4850">4850</course>
+		<course code="4660">4660</course>
+		<course code="4770">4770</course>
+	</courses>
+</schedule>
