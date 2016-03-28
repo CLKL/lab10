@@ -116,3 +116,4 @@
         <xs:attribute name="Time" type="XSDTime" use="required"/>
         <xs:attribute name="cn" type="XSDCourseNum" use="required"/>
     </xs:complexType>
+</xs:schema>
