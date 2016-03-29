@@ -2,14 +2,17 @@
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <!-- 4 digit time -->
+    <!-- Use ScheduleCompleteV2.xml to validate locally -->
+    <!--Commone data types -->
+    
+    <!-- Time is a 4 digit time -->
     <xs:simpleType name="XSDTime">
         <xs:restriction base="xs:integer">
             <xs:pattern value="[0-1][0-5][3][0]"/>
         </xs:restriction>
     </xs:simpleType>
 	
-    <!-- Course number can be either of these four -->
+    <!-- Course number can be one of these four -->
     <xs:simpleType name="XSDCourseNum">
         <xs:restriction base="xs:string">
             <xs:enumeration value="4650"/>
@@ -19,7 +22,7 @@
         </xs:restriction>
     </xs:simpleType>
 	
-    <!-- Room number can be either of these four -->
+    <!-- Room number can be one of these four -->
     <xs:simpleType name="XSDRoom">
         <xs:restriction base="xs:string">
             <xs:enumeration value="SE6-205"/>
@@ -29,7 +32,7 @@
         </xs:restriction>
     </xs:simpleType>
 	
-    <!-- Instructor can be either of these four -->
+    <!-- Instructor can be one of these four -->
     <xs:simpleType name="XSDInstructor">
         <xs:restriction base="xs:string">
             <xs:enumeration value="James Parry"/>
@@ -39,7 +42,7 @@
         </xs:restriction>
     </xs:simpleType>
 	
-    <!-- Day of the class -->
+    <!-- Day of the class can be one of these five -->
     <xs:simpleType name="XSDDay">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Monday"/>
@@ -50,9 +53,9 @@
         </xs:restriction>
     </xs:simpleType>
 	
-
-	
-    <!-- courses -->
+    <!--Structure -->
+    
+    <!-- Courses element contains a bunch of booking elements -->
     <xs:element name="XSDCourse">
         <xs:complexType>
             <xs:sequence>
@@ -60,7 +63,8 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>	
-	
+
+    <!--Booking element attributes and a number of locations -->
     <xs:complexType name="XSDBooking1">
         <xs:sequence>
             <xs:element name="location" type="XSDLocation" maxOccurs="1"/>
@@ -68,13 +72,14 @@
         <xs:attribute name="day" type="XSDDay" use="required"/>
         <xs:attribute name="Time" type="XSDTime" use="required"/>
     </xs:complexType>
-	
+
+    <!--Location element contains room and instructor attributes -->
     <xs:complexType name="XSDLocation">
         <xs:attribute name="Room" type="XSDRoom" use="required"/>
         <xs:attribute name="Instructor" type="XSDInstructor" use="required"/>
     </xs:complexType>
 	
-    <!-- periods -->
+    <!-- Periods element contain a bunch of booking elements -->
     <xs:element name="XSDPeriod">
         <xs:complexType>
             <xs:sequence>
@@ -82,7 +87,8 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>	
-	
+
+    <!--Booking element contains attributes and a number of locations -->
     <xs:complexType name="XSDBooking2">
         <xs:sequence>
             <xs:element name="location" type="XSDLocation" maxOccurs="1"/>
@@ -91,7 +97,7 @@
         <xs:attribute name="cn" type="XSDCourseNum" use="required"/>
     </xs:complexType>
 	
-    <!-- days -->
+    <!-- Days element contains a bunch of booking elements -->
     <xs:element name="XSDWeekday">
         <xs:complexType>
             <xs:sequence>
@@ -100,6 +106,7 @@
         </xs:complexType>
     </xs:element>
 
+    <!--Booking element contains attributes and a number of locations -->
     <xs:complexType name="XSDBooking3">
         <xs:sequence>
             <xs:element name="location" type="XSDLocation" maxOccurs="1"/>
@@ -107,7 +114,6 @@
         <xs:attribute name="Time" type="XSDTime" use="required"/>
         <xs:attribute name="cn" type="XSDCourseNum" use="required"/>
     </xs:complexType>
-
 
     <!-- Schedule contains multiple courses, periods and days  -->
     <xs:element name="Schedule">
