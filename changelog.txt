@@ -1,4 +1,12 @@
-newest at the top
+# Project Changelog
+>Template: * YYYY-MM-DD HH:MM - Comment
 
+### Changelog for Lab 09
+* 2016-03-29 16:40 - Added commenting readme and changelog
+* 2016-03-29 7:30 - Added a starter files and deleted unnecessary files in the data folder, added server side validation
+* 2016-03-28 13:23 - Modified the .xsd because it is missing a tag
+* 2016-03-28 13:10 - Replaced initial xsd and xml with ScheduleV2.xsd and ScheduleCompleteV2.xml which are modified on top of precious versions
+* 2016-03-25 17:45 - Added data types to the initial xsd
+* 2016-03-24 16:20 - Created an initial xsd with a data structure
+* 2016-03-24 13:45 - Added all the necessary files for this lab from previous labs
 
-date: 2016/01/28 18:00

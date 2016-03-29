@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <Schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="ScheduleV2.xsd">
+          xsi:noNamespaceSchemaLocation="ScheduleV2.xsd">
     <course cn="4650">
         <booking day="Monday" time="1030">
             <location room="SE12-306" instructor="Medhat Elmasry"/>
         </booking>
 		
         <booking day="Monday" time="1130">
-			<location room="SE12-306" instructor="Medhat Elmasry"/>
+            <location room="SE12-306" instructor="Medhat Elmasry"/>
         </booking>
 		
         <booking day="Monday" time="1630">
@@ -17,37 +17,37 @@ xsi:noNamespaceSchemaLocation="ScheduleV2.xsd">
 	
     <period time="1130">
         <booking cn="4650" day="Monday">
-			<location room="SE12-306" instructor="Medhat Elmasry"/>
+            <location room="SE12-306" instructor="Medhat Elmasry"/>
         </booking>
 			
         <booking cn="4910" day="Thursday">
-			<location room="SE12-306" instructor="Richard Chau"/>
+            <location room="SE12-306" instructor="Richard Chau"/>
         </booking>
 			
         <booking cn="4770" day="Friday">
-			<location room="SE12-306" instructor="Trevor Lord"/>
+            <location room="SE12-306" instructor="Trevor Lord"/>
         </booking>
     </period>
 
     <weekday day="Thursday">
         <booking time="0930" cn="4910">
-			<location room="SW5-1850" instructor="Richard Chau"/>
+            <location room="SW5-1850" instructor="Richard Chau"/>
         </booking>
 			
         <booking time="1030" cn="4910">
-			<location room="SE12-306" instructor="Richard Chau"/>
+            <location room="SE12-306" instructor="Richard Chau"/>
         </booking>
 			
         <booking time="1130" cn="4910">
-			<location room="SE12-306" instructor="Richard Chau"/>
+            <location room="SE12-306" instructor="Richard Chau"/>
         </booking>
 			
         <booking time="1330" cn="4850">
-			<location room="SE12-308" instructor="James Parry"/>
+            <location room="SE12-308" instructor="James Parry"/>
         </booking>
 			
         <booking time="1430" cn="4850">
-			<location room="SE12-308" instructor="James Parry"/>
+            <location room="SE12-308" instructor="James Parry"/>
         </booking>
     </weekday>
 </Schedule>
