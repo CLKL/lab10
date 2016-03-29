@@ -2,66 +2,57 @@
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-<!-- 4 digit time -->
+    <!-- 4 digit time -->
     <xs:simpleType name="XSDTime">
         <xs:restriction base="xs:integer">
             <xs:pattern value="[0-1][0-5][3][0]"/>
         </xs:restriction>
     </xs:simpleType>
 	
-<!-- Course number can be either of these four -->
-	<xs:simpleType name="XSDCourseNum">
+    <!-- Course number can be either of these four -->
+    <xs:simpleType name="XSDCourseNum">
         <xs:restriction base="xs:string">
             <xs:enumeration value="4650"/>
             <xs:enumeration value="4770"/>
-			<xs:enumeration value="4850"/>
+            <xs:enumeration value="4850"/>
             <xs:enumeration value="4910"/>
         </xs:restriction>
     </xs:simpleType>
 	
-<!-- Room number can be either of these four -->
-	<xs:simpleType name="XSDRoom">
+    <!-- Room number can be either of these four -->
+    <xs:simpleType name="XSDRoom">
         <xs:restriction base="xs:string">
             <xs:enumeration value="SE6-205"/>
             <xs:enumeration value="SE12-306"/>
-			<xs:enumeration value="SE12-308"/>
+            <xs:enumeration value="SE12-308"/>
             <xs:enumeration value="SW5-1850"/>
         </xs:restriction>
     </xs:simpleType>
 	
-<!-- Instructor can be either of these four -->
-	<xs:simpleType name="XSDInstructor">
+    <!-- Instructor can be either of these four -->
+    <xs:simpleType name="XSDInstructor">
         <xs:restriction base="xs:string">
             <xs:enumeration value="James Parry"/>
             <xs:enumeration value="Medhat Elmasry"/>
-			<xs:enumeration value="Richard Chau"/>
+            <xs:enumeration value="Richard Chau"/>
             <xs:enumeration value="Trevor Lord"/>
         </xs:restriction>
     </xs:simpleType>
 	
-<!-- Day of the class -->
-	<xs:simpleType name="XSDDay">
+    <!-- Day of the class -->
+    <xs:simpleType name="XSDDay">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Monday"/>
             <xs:enumeration value="Tuesday"/>
-			<xs:enumeration value="Wednesday"/>
+            <xs:enumeration value="Wednesday"/>
             <xs:enumeration value="Thursday"/>
-			<xs:enumeration value="Friday"/>
+            <xs:enumeration value="Friday"/>
         </xs:restriction>
     </xs:simpleType>
 	
-<!-- Schedule contains multiple courses, periods and days  -->
-	<xs:element name="Schedule">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="course" type="XSDCourse" maxOccurs="unbounded"/>
-				<xs:element name="period" type="XSDPeriod" maxOccurs="unbounded"/>
-				<xs:element name="weekday" type="XSDWeekday" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+
 	
-<!-- courses -->
+    <!-- courses -->
     <xs:element name="XSDCourse">
         <xs:complexType>
             <xs:sequence>
@@ -83,7 +74,7 @@
         <xs:attribute name="Instructor" type="XSDInstructor" use="required"/>
     </xs:complexType>
 	
-<!-- periods -->
+    <!-- periods -->
     <xs:element name="XSDPeriod">
         <xs:complexType>
             <xs:sequence>
@@ -92,15 +83,15 @@
         </xs:complexType>
     </xs:element>	
 	
-	<xs:complexType name="XSDBooking2">
-		<xs:sequence>
+    <xs:complexType name="XSDBooking2">
+        <xs:sequence>
             <xs:element name="location" type="XSDLocation" maxOccurs="1"/>
         </xs:sequence>
         <xs:attribute name="day" type="XSDDay" use="required"/>
         <xs:attribute name="cn" type="XSDCourseNum" use="required"/>
     </xs:complexType>
 	
-<!-- days -->
+    <!-- days -->
     <xs:element name="XSDWeekday">
         <xs:complexType>
             <xs:sequence>
@@ -109,11 +100,24 @@
         </xs:complexType>
     </xs:element>
 
-	<xs:complexType name="XSDBooking3">
-		<xs:sequence>
+    <xs:complexType name="XSDBooking3">
+        <xs:sequence>
             <xs:element name="location" type="XSDLocation" maxOccurs="1"/>
         </xs:sequence>
         <xs:attribute name="Time" type="XSDTime" use="required"/>
         <xs:attribute name="cn" type="XSDCourseNum" use="required"/>
     </xs:complexType>
+
+
+    <!-- Schedule contains multiple courses, periods and days  -->
+    <xs:element name="Schedule">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="course" maxOccurs="unbounded"/>
+                <xs:element name="period" maxOccurs="unbounded"/>
+                <xs:element name="weekday" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
 </xs:schema>
