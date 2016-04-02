@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="ScheduleV2.xsd">
     <course cn="4650">
         <booking day="Monday" time="1030">
@@ -50,4 +50,4 @@
             <location room="SE12-308" instructor="James Parry"/>
         </booking>
     </weekday>
-</Schedule>
+</schedule>
