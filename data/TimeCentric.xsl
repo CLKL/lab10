@@ -21,26 +21,44 @@
             </head>
             <body>
                 <h2>Start-time centric data</h2>
-                <xsl:call-template name="startTime"/>
+                <xsl:call-template name="container"/>
             </body>
         </html>
     </xsl:template>
-
-    <xsl:template name="startTime">
+    <xsl:template name="container">
         <h1>Start Time of Classes</h1>
         <table>
             <tr>
-                <th>Day</th>
-                <th>Course</th>
-                <th>Instructor</th>
-                <th>Room</th>>
+                <td>
+                    <xsl:call-template name="startTime"/>
+                </td>
+                <td>
+                    <xsl:call-template name="instructors"/>
+                </td>
+                <td>
+                    <xsl:call-template name="rooms"/>
+                </td>
+
             </tr>
-            <xsl:for-each select="/schedule/period[@time='1130']/booking">
-                <xsl:sort select="@day"/>
-                <xsl:call-template name="startTime_day"/>
-            </xsl:for-each>
+            
         </table>
     </xsl:template>
+    <xsl:template name="startTime">
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Course</th>
+
+            </tr>
+            <xsl:for-each select="/schedule/period[@time='1130']/booking">
+                <xsl:call-template name="startTime_day"/>
+
+            </xsl:for-each>
+            
+        </table>
+    </xsl:template>
+    
 
     <xsl:template name="startTime_day">
         <tr>
@@ -48,31 +66,50 @@
                 <xsl:value-of select="@day"/>
             </td>
             <td>
-                <xsl:value-of select="@cn"/>
+                <xsl:value-of select="1130"/>   
             </td>
             <td>
-                <xsl:for-each select="/schedule/period[@time='1130']/booking/location">
-                    <xsl:sort select="@room"/>
-                    <xsl:call-template name="location"/>
-                </xsl:for-each>
+                <xsl:value-of select="@cn"/>
             </td>
+        </tr>
+        
+    </xsl:template>
+    <xsl:template name="instructors">
+        <table>
+            <tr>
+                <th>Instructor</th>
+            </tr>
 
+            <xsl:for-each select="/schedule/period[@time='1130']/booking/location">
+                <xsl:call-template name="instructor"/>
 
+            </xsl:for-each>
+        </table>
+    </xsl:template>
+    <xsl:template name="instructor">
+        <tr>
+            <td>
+                <xsl:value-of select="@instructor"/>
+            </td>
         </tr>
     </xsl:template>
-    
-    <xsl:template name="location">
+    <xsl:template name="rooms">
+        <table>
+            <tr>
+                <th>Room</th>>
+            </tr>
+
+            <xsl:for-each select="/schedule/period[@time='1130']/booking/location">
+                <xsl:call-template name="room"/>
+
+            </xsl:for-each>
+        </table>
+    </xsl:template>
+    <xsl:template name="room">
         <tr>
             <td>
                 <xsl:value-of select="@room"/>
             </td>
-            <td>
-                <xsl:value-of select="@instructor"/>
-            </td>
-
-
-
-
         </tr>
     </xsl:template>
 
