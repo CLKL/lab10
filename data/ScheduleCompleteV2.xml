@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="ScheduleV2.xsd">
+<schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <course cn="4650">
         <booking day="Monday" time="1030">
             <location room="SE12-306" instructor="Medhat Elmasry"/>
