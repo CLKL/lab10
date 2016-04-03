@@ -51,11 +51,27 @@
                 <xsl:value-of select="@cn"/>
             </td>
             <td>
-                <xsl:value-of select="/location@instructor"/>  
+                <xsl:for-each select="/schedule/period[@time='1130']/booking/location">
+                    <xsl:sort select="@room"/>
+                    <xsl:call-template name="location"/>
+                </xsl:for-each>
+            </td>
+
+
+        </tr>
+    </xsl:template>
+    
+    <xsl:template name="location">
+        <tr>
+            <td>
+                <xsl:value-of select="@room"/>
             </td>
             <td>
-                <xsl:value-of select="/location@room"/>  
+                <xsl:value-of select="@instructor"/>
             </td>
+
+
+
 
         </tr>
     </xsl:template>
