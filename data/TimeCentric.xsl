@@ -45,10 +45,11 @@
     </xsl:template>
     <xsl:template name="startTime">
         <table>
-            <tr>
-                <th>Day</th>
+            <tr>                
                 <th>Time</th>
+                <th>Day</th>
                 <th>Course</th>
+
             </tr>
             
             <xsl:for-each select="/schedule/period[@time='1130']/booking">
@@ -62,6 +63,9 @@
 
     <xsl:template name="startTime_day">
         <tr>
+            <td>
+                <xsl:value-of select="../@time"/>   
+            </td>
             <td>
                 <xsl:value-of select="@day"/>
             </td>
