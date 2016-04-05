@@ -2,6 +2,12 @@
 >Template: * YYYY-MM-DD HH:MM - Comment
 
 ### Changelog for Lab 10
+* 2016-04-05 16:40 - Updated changelog 
+* 2016-04-05 16:35 - Adjusted display with time-centric and day-centric xsl stylesheets
+* 2016-04-05 11:50 - Fixed minor issues with time-centric xsl stylesheet
+* 2016-04-05 11:21 - Fixed minor issues with day-centric xsl stylesheet
+* 2016-04-05 11:19 - Added a day-centric xsl stylesheet
+* 2016-04-04 11:00 - Adjusted template to ensure it validates and displays properly
 * 2016-04-02 11:15 - Fixed minor mistakes and added readme and changelog
-* 2016-04-02 11:10 - Added a xsl stylesheet
+* 2016-04-02 11:10 - Added a time-centric xsl stylesheet
 
