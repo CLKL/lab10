@@ -70,6 +70,9 @@
                 <xsl:value-of select="@day"/>
             </td>
             <td>
+                <xsl:value-of select="1130"/>   
+            </td>
+            <td>
                 <xsl:value-of select="@cn"/>
             </td>
         </tr>
