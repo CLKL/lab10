@@ -39,8 +39,7 @@
         </tr>
     </xsl:template>
 
-    <xsl:template match="period">      
-  
+    <xsl:template match="period">    
         <tr>
             <td>
                 <xsl:value-of select="@time"/>
@@ -61,20 +60,16 @@
                 <xsl:apply-templates select= "booking[@day='Friday']"/>
             </td>
         </tr>
-            
+           
         
     </xsl:template>
 
     <xsl:template match="booking">      
-       
-
         <xsl:value-of select="location/@room"/>
         <br />
         <xsl:value-of select="location/@instructor"/>
         <br />
         <xsl:value-of select="@cn"/>
- 
-            
-       
+     
     </xsl:template>
 </xsl:stylesheet>
