@@ -49,8 +49,8 @@
                 <th>Day</th>
                 <th>Time</th>
                 <th>Course</th>
-
             </tr>
+            
             <xsl:for-each select="/schedule/period[@time='1130']/booking">
                 <xsl:call-template name="startTime_day"/>
 
