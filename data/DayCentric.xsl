@@ -65,7 +65,7 @@
     <xsl:template name="start_day">
         <tr>
             <td>
-                <xsl:value-of select="Thursday"/>
+                <xsl:value-of select="../@day"/>
             </td>
             <td>
                 <xsl:value-of select="@time"/>   
