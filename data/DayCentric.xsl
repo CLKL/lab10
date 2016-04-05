@@ -59,8 +59,7 @@
             <td>
                 <xsl:apply-templates select= "booking[@day='Friday']"/>
             </td>
-        </tr>
-           
+        </tr>          
         
     </xsl:template>
 
