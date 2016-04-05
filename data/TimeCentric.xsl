@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-    Document   : TimeCentric.xsl
-    Created on : April 1, 2016, 9:12 PM
-    Author     : Kelly
+    Document   : DayCentric.xsl
+    Created on : April 5, 2016, 10:34 AM
+    Author     : Owner
     Description:
         Purpose of transformation follows.
 -->
@@ -20,101 +20,101 @@
                 <title>Schedule for ACIT 4A</title>
             </head>
             <body>
-                <h2>Start-time centric data</h2>
+                <h2>Time centric schedule</h2>
                 <xsl:call-template name="container"/>
             </body>
         </html>
     </xsl:template>
+
     <xsl:template name="container">
-        <h1>Start Time of Classes</h1>
+        <h1>Day of Classes</h1>
         <table>
             <tr>
                 <td>
-                    <xsl:call-template name="startTime"/>
-                </td>
-                <td>
-                    <xsl:call-template name="instructors"/>
-                </td>
-                <td>
-                    <xsl:call-template name="rooms"/>
+                    <xsl:call-template name="startDay"/>
                 </td>
 
+
             </tr>
-            
+
         </table>
     </xsl:template>
-    <xsl:template name="startTime">
+
+    <xsl:template name="startDay">
         <table>
-            <tr>                
-                <th>Time</th>
-                <th>Day</th>
-                <th>Course</th>
+            <tr>
+                <th>
+                    Day/Time
+                </th>
+                <xsl:for-each select="/schedule/weekday/booking">
+                    <xsl:call-template name="top"/>
+
+                </xsl:for-each>
+            </tr>
+            <tr>
+                <td>
+                    <xsl:value-of select="/schedule/weekday/@day"/>
+                </td>
+
+                <xsl:call-template name="instructors"/>
+
 
             </tr>
-            
-            <xsl:for-each select="/schedule/period[@time='1130']/booking">
-                <xsl:call-template name="startTime_day"/>
 
-            </xsl:for-each>
-            
+            <tr>
+                <td>
+                </td>
+                <xsl:call-template name="rooms"/>
+
+
+            </tr>
         </table>
     </xsl:template>
-    
 
-    <xsl:template name="startTime_day">
-        <tr>
-            <td>
-                <xsl:value-of select="../@time"/>   
-            </td>
-            <td>
-                <xsl:value-of select="@day"/>
-            </td>
-            <td>
-                <xsl:value-of select="1130"/>   
-            </td>
-            <td>
-                <xsl:value-of select="@cn"/>
-            </td>
-        </tr>
-        
+    <xsl:template name="top">
+
+        <th>
+            <xsl:value-of select="@time"/>   
+        </th>
+
+
+    </xsl:template>
+
+
+
+
+    <xsl:template name="instructor">
+
+        <td>
+            <xsl:value-of select="@instructor"/>
+            <br />
+            <xsl:value-of select="../@cn"/>
+        </td>
+    </xsl:template>
+
+
+
+    <xsl:template name="room">
+
+        <td>
+            <xsl:value-of select="@room"/>
+        </td>
+
     </xsl:template>
     <xsl:template name="instructors">
-        <table>
-            <tr>
-                <th>Instructor</th>
-            </tr>
 
-            <xsl:for-each select="/schedule/period[@time='1130']/booking/location">
-                <xsl:call-template name="instructor"/>
 
-            </xsl:for-each>
-        </table>
-    </xsl:template>
-    <xsl:template name="instructor">
-        <tr>
-            <td>
-                <xsl:value-of select="@instructor"/>
-            </td>
-        </tr>
+        <xsl:for-each select="/schedule/weekday/booking/location">
+            <xsl:call-template name="instructor"/>
+
+        </xsl:for-each>
     </xsl:template>
     <xsl:template name="rooms">
-        <table>
-            <tr>
-                <th>Room</th>>
-            </tr>
 
-            <xsl:for-each select="/schedule/period[@time='1130']/booking/location">
-                <xsl:call-template name="room"/>
 
-            </xsl:for-each>
-        </table>
+        <xsl:for-each select="/schedule/weekday/booking/location">
+            <xsl:call-template name="room"/>
+
+        </xsl:for-each>
     </xsl:template>
-    <xsl:template name="room">
-        <tr>
-            <td>
-                <xsl:value-of select="@room"/>
-            </td>
-        </tr>
-    </xsl:template>
-
 </xsl:stylesheet>
